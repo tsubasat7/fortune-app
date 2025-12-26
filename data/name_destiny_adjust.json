@@ -1,0 +1,9 @@
+{
+  "match_bonus": {
+    "soukaku_lifenumber_same": "運命の方向性が一致し、迷いが少ない人生です。",
+    "soukaku_lifenumber_near": "流れに修正力があり、軌道修正が得意です。"
+  },
+  "challenge_type": {
+    "kyo_exist": "試練を通して成熟するタイプ。後半運が強まります。"
+  }
+}

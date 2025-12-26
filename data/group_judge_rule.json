@@ -1,0 +1,14 @@
+{
+  "life_number_balance": {
+    "stable": "低・中・高が揃っている",
+    "biased": "一帯域に偏っている"
+  },
+  "attribute_balance": {
+    "rich": "4属性以上存在",
+    "biased": "同属性が3人以上"
+  },
+  "behavior_balance": {
+    "conflict": "統率タイプが複数",
+    "collapse": "支援タイプ不在"
+  }
+}

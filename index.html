@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>運命の六属性診断</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="命数・姓名・相性・グループを統合した総合診断アプリ" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 16px;
+      text-align: center;
+    }
+    main {
+      padding: 16px;
+      max-width: 960px;
+      margin: auto;
+    }
+    section {
+      background: #fff;
+      margin-bottom: 24px;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 16px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+    footer {
+      font-size: 12px;
+      color: #666;
+      padding: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>運命の六属性診断</h1>
+  <p>命数・姓名・相性・グループ統合診断</p>
+</header>
+
+<main>
+
+  <!-- 命数診断 -->
+  <section id="life-number">
+    <h2>① 命数診断</h2>
+    <label>
+      生年月日
+      <input type="date" id="birthdate">
+    </label>
+    <button onclick="runLifeNumber()">命数を診断する</button>
+    <div class="result" id="lifeNumberResult"></div>
+  </section>
+
+  <!-- 姓名判断 -->
+  <section id="name-judge">
+    <h2>② 姓名判断</h2>
+    <label>
+      姓
+      <input type="text" id="familyName">
+    </label>
+    <label>
+      名
+      <input type="text" id="givenName">
+    </label>
+    <button onclick="runNameJudge()">姓名判断を行う</button>
+    <div class="result" id="nameJudgeResult"></div>
+  </section>
+
+  <!-- 相性診断 -->
+  <section id="compatibility">
+    <h2>③ 相性診断（個人×個人）</h2>
+
+    <label>本人 生年月日
+      <input type="date" id="birthA">
+    </label>
+    <label>相手 生年月日
+      <input type="date" id="birthB">
+    </label>
+
+    <label>関係性
+      <select id="relation">
+        <option value="parent_child">親子</option>
+        <option value="couple">夫婦</option>
+        <option value="love">恋愛</option>
+        <option value="work">仕事</option>
+      </select>
+    </label>
+
+    <button onclick="runCompatibility()">相性を診断する</button>
+    <div class="result" id="compatibilityResult"></div>
+  </section>
+
+  <!-- グループ診断 -->
+  <section id="group">
+    <h2>④ グループ診断（家族・複数人）</h2>
+
+    <label>メンバー1 生年月日
+      <input type="date" class="groupBirth">
+    </label>
+    <label>メンバー2 生年月日
+      <input type="date" class="groupBirth">
+    </label>
+    <label>メンバー3 生年月日（任意）
+      <input type="date" class="groupBirth">
+    </label>
+    <label>メンバー4 生年月日（任意）
+      <input type="date" class="groupBirth">
+    </label>
+
+    <button onclick="runGroup()">グループ診断を行う</button>
+    <div class="result" id="groupResult"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    本診断は娯楽・参考目的のコンテンツです。<br>
+    医療・法律・人生の結果を保証するものではありません。
+  </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

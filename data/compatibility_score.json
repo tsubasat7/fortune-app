@@ -1,0 +1,23 @@
+{
+  "life_number": {
+    "same": 35,
+    "near": 30,
+    "middle": 25,
+    "far": 15,
+    "very_far": 5
+  },
+  "attribute": {
+    "fire_wind": 30,
+    "water_wind": 25,
+    "light_dark": 20,
+    "fire_water": 10,
+    "same": 25
+  },
+  "behavior": {
+    "support_free": 15,
+    "control_dialog": 10,
+    "free_free": -5,
+    "control_control": -10,
+    "late_any": 5
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "father": "direction",
+  "mother": "stability",
+  "eldest_son": "drive",
+  "eldest_daughter": "emotion",
+  "second_son": "flexibility",
+  "second_daughter": "balance"
+}
