@@ -1,5 +1,5 @@
 // main.js
-// 全診断統合コントローラ（Web公開前提）
+// 全診断統合コントローラ（Web公開前提・手入力命数対応）
 
 import { getLifeNumberResult } from "./js/lifeNumber.js";
 import { getNameJudgeResult } from "./js/nameJudge.js";
@@ -14,8 +14,13 @@ const resultArea = document.getElementById("result");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const mode = document.querySelector("input[name='mode']:checked").value;
+  const modeInput = document.querySelector("input[name='mode']:checked");
+  if (!modeInput) {
+    resultArea.innerHTML = "診断モードを選択してください。";
+    return;
+  }
 
+  const mode = modeInput.value;
   let result = "";
 
   try {
@@ -33,38 +38,4 @@ form.addEventListener("submit", (e) => {
         break;
 
       case "group":
-        result = runGroupDiagnosis();
-        break;
-
-      default:
-        result = "診断モードが選択されていません。";
-    }
-  } catch (err) {
-    result = "診断中にエラーが発生しました：" + err.message;
-  }
-
-  resultArea.innerHTML = result;
-});
-
-// --- 各診断処理 ---
-
-function runLifeDiagnosis() {
-  const birth = document.getElementById("birth").value;
-  return getLifeNumberResult(birth);
-}
-
-function runNameDiagnosis() {
-  const name = document.getElementById("name").value;
-  return getNameJudgeResult(name);
-}
-
-function runCompatibilityDiagnosis() {
-  const birth1 = document.getElementById("birth1").value;
-  const birth2 = document.getElementById("birth2").value;
-  return getCompatibilityResult(birth1, birth2);
-}
-
-function runGroupDiagnosis() {
-  const births = document.getElementById("groupBirths").value.split(",");
-  return getGroupJudgeResult(births);
-}
+        result = runGroupD
